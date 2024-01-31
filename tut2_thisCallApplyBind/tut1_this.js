@@ -62,12 +62,12 @@
 // test();
 
 
-// // this.a = 5;
-// // this keyword will point
-// // towards this keyword of
-// // outer normal function
-// // if it's not there
-// // it will point towards window
+// this.a = 5;
+// this keyword will point
+// towards this keyword of
+// outer normal function
+// if it's not there
+// it will point towards window
 // const test = () => {
 //     console.log(this);
 // }

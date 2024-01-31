@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .task {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+      }
+      .task:nth-child(2n) {
+        background-color: aliceblue;
+      }
+      span {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="task">
+        <span>English</span>
+        <button class="btn">Delete</button>
+      </div>
+      <div class="task">
+        <span>Hindi</span>
+        <button class="btn">Delete</button>
+      </div>
+      <div class="task">
+        <span>Math</span>
+        <button class="btn">Delete</button>
+      </div>
+      <div class="task">
+        <span>c++</span>
+        <button class="btn">Delete</button>
+      </div>
+      <div class="task">
+        <span>java</span>
+        <button class="btn">Delete</button>
+      </div>
+    </div>
+
+    <script>
+      const btns = document.querySelectorAll(".btn");
+
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const parent = btn.parentElement;
+          console.log(parent.firstElementChild.innerHTML);
+          parent.remove();
+        });
+      });
+    </script>
+  </body>
+</html>

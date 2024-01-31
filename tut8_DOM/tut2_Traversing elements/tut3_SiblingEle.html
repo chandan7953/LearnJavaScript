@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="characters">
+      <h1>Start</h1>
+      <ul id="hobbits">
+        <li >Frodo Baggins</li>
+        <li>Samwise "Sam" Gamgee</li>
+        <li id="middleEle">Meriadoc "Merry" Brandybuck</li>
+        <li>Peregrin "Pippin" Took</li>
+        <li>Bilbo Baggins</li>
+      </ul>
+      <h1>End</h1>
+    </div>
+    </div>
+    <script>
+      const hobbits = document.getElementById("hobbits");
+      console.log(hobbits);
+      const child = hobbits.children;
+
+      console.log("Child element ", child)
+
+      const firstEle = hobbits.firstElementChild;
+      console.log(firstEle)
+
+      const lastEle = hobbits.lastElementChild
+      console.log(lastEle)
+
+
+      const middleEle = document.getElementById("middleEle");
+      console.log(middleEle);
+
+      const prevEle = middleEle.previousElementSibling;
+      console.log(prevEle);
+      
+      const nextEle = middleEle.nextElementSibling;
+      console.log(nextEle);
+    </script>
+  </body>
+</html>

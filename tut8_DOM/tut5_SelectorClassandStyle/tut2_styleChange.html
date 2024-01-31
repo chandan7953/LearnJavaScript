@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #btn {
+        color: white;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Send</button>
+    <script>
+      const btn = document.getElementById("btn");
+
+      let cssObj = getComputedStyle(btn);
+      //   console.log(cssObj);
+      console.log(cssObj.color);
+
+      //   change style
+      btn.style.backgroundColor = "black";
+
+      //changing multiple style property
+      btn.style.cssText = "background-color: blue; font-size:14px;";
+    </script>
+  </body>
+</html>

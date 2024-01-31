@@ -1,4 +1,4 @@
-// we can declare array by two way
+// ********************************we can declare array by two way************************
 
 // 1.with new keyword
 let a = new Array(1, 2, 3);
@@ -11,7 +11,7 @@ a.forEach((value, index, arr) => {
 let arr = [1, 2, 3];
 console.log("\nBefore any operation in array -> ", arr);
 
-// some operation in array
+// *******************************some operation in array******************************
 
 // insert at end
 arr.push("endElement");
@@ -41,6 +41,9 @@ console.log("After adding element in arrray at index 2 -> ", myArray);
 myArray.splice(4, 1); // Delete 1 element starting from index 4
 console.log("After Delete element in arrray at index 4 -> ", myArray);
 
+
+
+// ************************************************sorting********************************************
 let arry = [45, 2, 79, 20, 49, 18];
 console.log("\nBefore the sorting array -> ", arry);
 // if we can not use lamada expression it sort lexographyical order
@@ -53,8 +56,11 @@ console.log("After the sorting array in increasing order -> ", arry);
 arry.sort((a, b) => b - a);
 console.log("After the sorting array in descending order -> ", arry);
 
+
+// ***********************************************length********************************************
 // how to clear the array all element from array
 console.log("\nlength of arry is -> ", arry.length);
 // now clear all element from Array
 arry.length = 0;
 console.log(arry, "\n");
+

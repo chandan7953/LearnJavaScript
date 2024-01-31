@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="hello">Chandan</h1>
+
+    <script>
+      let hello = document.getElementById("hello");
+
+      hello.setAttribute("class", "heading");
+
+      let x = hello.getAttribute("class");
+      console.log(x);
+
+      let val = hello.hasAttribute("class");
+      console.log(val);
+
+      hello.removeAttribute("class");
+      console.log("after deleting");
+
+      val = hello.hasAttribute("class");
+      console.log(val);
+    </script>
+  </body>
+</html>

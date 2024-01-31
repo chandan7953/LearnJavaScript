@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/how-asynchronous-javascript-code-gets-executed-in-browser/

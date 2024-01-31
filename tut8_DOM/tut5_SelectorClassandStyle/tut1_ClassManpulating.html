@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .active {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="box">
+      <p>I am developer</p>
+    </div>
+
+    <button id="btn">toggle button</button>
+
+    <script>
+      let container = document.getElementById("container");
+
+      //   add class
+      container.classList.add("chandan");
+      container.classList.add("mytry", "mymood");
+
+      //   check class is present or not
+      let result = container.classList.contains("box");
+      console.log(result);
+
+      //   remove class
+      container.classList.remove("chandan");
+
+      //   replace class
+      container.classList.replace("mytry", "changeClass");
+
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        // adding toggle class
+        container.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

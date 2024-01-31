@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="hobbits">
+      <li>Frodo Baggins</li>
+      <li>Samwise "Sam" Gamgee</li>
+      <li id="mid">Meriadoc "Merry" Brandybuck</li>
+      <li>Peregrin "Pippin" Took</li>
+      <li>Bilbo Baggins</li>
+    </ul>
+
+    <script>
+      // user define function to create li tag
+      function createLi(str) {
+        let list = document.createElement("li");
+        list.innerHTML = str;
+        return list;
+      }
+
+      const hobbits = document.getElementById("hobbits");
+      const mid = document.getElementById("mid");
+
+      // insert new li at end
+      let list1 = createLi("cricket");
+      hobbits.appendChild(list1);
+
+      // inserting new li before mid li
+      let list2 = createLi("Pubg");
+      hobbits.insertBefore(list2, mid);
+
+      // inserting new li after mid li
+      let list3 = createLi("Free-fire");
+      hobbits.insertBefore(list3, mid.nextElementSibling);
+
+      // replace li to some another li
+      let list4 = createLi("Chandan");
+      hobbits.replaceChild(list4, hobbits.firstElementChild);
+
+      //delete child element
+      hobbits.removeChild(hobbits.firstElementChild.nextElementSibling);
+
+      // clone element
+      let cloneEle = list1.cloneNode(true);
+      console.log(cloneEle);
+
+      // removing ul from document
+      // to remove element from body you have to write this way only body is not work
+      // always remeber if we work with child it is important to point parent node
+
+      // way 1
+      // hobbits.parentElement.removeChild(hobbits);
+
+      //way2
+      // hobbits.remove();
+
+      mid.remove();
+    </script>
+  </body>
+</html>

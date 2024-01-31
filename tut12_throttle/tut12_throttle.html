@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" onkeyup="processChange()" />
+    <button onclick="processChange()">Click me</button>
+
+    <script>
+      // method 1
+      // const throttleFn = (callBackFn, cooldownTime) => {
+      //     let lastExeFnTime = 0; //at t = 0 a function has been executed
+      //     return function(...args){
+      //         let currentTime = new Date().getTime(); // gives time in milli seconds
+      //         if (currentTime - lastExeFnTime < cooldownTime) {
+      //             // don't do anything
+      //             return;
+      //         }
+      //         else{
+      //             callBackFn(...args);
+      //             lastExeFnTime=currentTime;
+      //         }
+      //     }
+      // }
+
+      // throttle function
+      const throttle = (func, delay) => {
+        let execute = true; // not inside coolDownTime
+        return function (...args) {
+          if (execute) {
+            func(...args);
+            execute = false; // now we are inside coolDownTime
+            setTimeout(() => {
+              execute = true;
+            }, delay);
+          }
+        };
+      };
+      // function that execuate in debounce
+      function saveInput() {
+        console.log("Saving data");
+      }
+
+      //event
+      const processChange = throttle(() => saveInput(), 5000);
+    </script>
+  </body>
+</html>

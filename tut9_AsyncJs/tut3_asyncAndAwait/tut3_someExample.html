@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <b id="text">Bold Text </b>
+    <button id="btn">Click Here</button>
+
+    <script>
+      // Callback hell, or the "Pyramid of Doom," refers to a coding scenario in JavaScript where multiple layers of nested callbacks make code difficult to read and maintain.
+
+      // we have bold text inside html, button
+      // when user clicks on the button
+      // 1. increase the fontSize to 20px;
+      // 2. after one second of increasing font size change the color to red
+      // 3. after one second of changing the color to red add the background color (green).
+
+      const button = document.getElementById("btn");
+      const text = document.getElementById("text");
+
+      function delay(number) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve();
+          }, number);
+        });
+      }
+
+      button.addEventListener("click", async () => {
+        text.style.fontSize = "20px";
+        await delay(3000);
+        text.style.color = "red";
+        await delay(1000);
+        text.style.backgroundColor = "green";
+      });
+    </script>
+  </body>
+</html>

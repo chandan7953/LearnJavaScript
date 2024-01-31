@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" onkeyup="processChange()" />
+    <button onclick="processChange()">Click me</button>
+
+    <script>
+      // debounce function
+      function debounce(func, timeout = 300) {
+        let timer = null;
+        return (...args) => {
+          clearTimeout(timer);
+
+          timer = setTimeout(() => {
+            func.apply(this, args);
+          }, timeout);
+        };
+      }
+      // function that execuate in debounce
+      function saveInput() {
+        console.log("Saving data");
+      }
+
+      //event
+      const processChange = debounce(() => saveInput(), 5000);
+    </script>
+  </body>
+</html>

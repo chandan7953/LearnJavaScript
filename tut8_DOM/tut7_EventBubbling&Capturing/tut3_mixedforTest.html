@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>September</title>
+    <style>
+      #grandParent {
+        border: 1px solid;
+        padding: 10px;
+        background-color: brown;
+        cursor: pointer;
+      }
+
+      #parent {
+        margin: 75px;
+        border: 1px solid;
+        padding: 10px;
+        background-color: azure;
+        cursor: pointer;
+      }
+
+      #child {
+        border: 1px solid;
+        margin: 35px;
+        padding: 10px;
+        background-color: bisque;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+      }
+
+      #childKaChild {
+        border: 1px solid;
+        margin: 35px;
+        height: 200px;
+        width: 200px;
+        cursor: pointer;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="grandParent">
+      grandParent
+      <div id="parent">
+        parent
+        <div id="child">
+          child
+          <div id="childKaChild">childKaChild</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const grandParent = document.getElementById("grandParent");
+      const parentDiv = document.getElementById("parent");
+      const child = document.getElementById("child");
+      const childKaChild = document.getElementById("childKaChild");
+
+      // true or false
+      // true -> event should trickle down
+      // false -> event should bubble up
+      // false is default behavior
+
+      grandParent.addEventListener(
+        "click",
+        () => {
+          console.log("grandParent has been clicked");
+        },
+        false
+      );
+
+      parentDiv.addEventListener(
+        "click",
+        () => {
+          console.log("parent has been clicked");
+        },
+        true
+      );
+
+      child.addEventListener(
+        "click",
+        (event) => {
+          // event.stopPropagation();
+          console.log("child has been click");
+        },
+        false
+      );
+
+      childKaChild.addEventListener("click", () => {
+        console.log("childKaChild has been clicked");
+      });
+
+      // event going down and going up
+      // and this happens irrespective of true
+      // and false
+    </script>
+  </body>
+</html>

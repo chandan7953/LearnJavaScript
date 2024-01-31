@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="header">Header of blog</h1>
+    <p class="header">paragraph of blog</p>
+
+    <h2>Chandan</h2>
+    <h2>Singh</h2>
+
+    <footer id="blog-footer">I am developer</footer>
+
+    <script>
+      // it basically pick first match class or id or tag name you given it does not return array
+      const header = document.querySelector(".header");
+
+      console.log(header);
+
+      const h2 = document.querySelector("h2");
+      console.log(h2);
+
+      const blogFooter = document.querySelector("#blog-footer");
+      console.log(blogFooter);
+    </script>
+  </body>
+</html>

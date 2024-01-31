@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Manipulation Example</title>
+
+    <style>
+      #parentElement {
+        background-color: aqua;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parentElement">
+      <p id="oldChild">Old Child Element</p>
+      <p id="siblingElement">Sibling Element</p>
+    </div>
+
+    <script>
+      const parent = document.getElementById("parentElement");
+      // createElement()
+      const newDiv = document.createElement("div");
+
+      // textContent
+      //   newDiv.textContent = "Hello, World!";
+
+      // innerHTML
+      newDiv.innerHTML = "<p>chandan</p>";
+
+      // appendChild()
+      parent.appendChild(newDiv);
+
+      // cloneNode()
+      const clonedDiv = newDiv.cloneNode(true);
+
+      // after()
+      parent.after(clonedDiv);
+
+      // append()
+      parent.append("element add by append()");
+
+      // prepend()
+      parent.prepend(
+        (document.createElement("p").innerHTML = "element add by prepend()")
+      );
+
+      // insertAdjacentHTML()
+      parent.insertAdjacentHTML("beforebegin", "<p>Before the element</p>");
+
+      // replaceChild()
+      const oldChild = document.getElementById("oldChild");
+      const newElement = document.createElement("p");
+      newElement.innerHTML = "Element replaced by old child";
+      parent.replaceChild(newElement, oldChild);
+
+      // removeChild()
+      parent.removeChild(newDiv);
+
+      // insertBefore()
+      const siblingElement = document.getElementById("siblingElement");
+
+      const myele = document.createElement("p");
+      myele.innerHTML = "Element insertBefore by old siblingElement";
+      parent.insertBefore(myele, siblingElement);
+    </script>
+  </body>
+</html>

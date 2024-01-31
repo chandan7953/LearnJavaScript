@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .active {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="box">
+      <p>I am developer</p>
+    </div>
+
+    <button id="btn">toggle button</button>
+
+    <script>
+      let container = document.getElementById("container");
+
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", (e) => {
+        // adding toggle class
+        container.classList.toggle("active");
+        console.log(e.target.innerHTML);
+      });
+    </script>
+  </body>
+</html>

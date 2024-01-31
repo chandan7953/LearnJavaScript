@@ -1,3 +1,6 @@
+var result = Infinity - 1;
+console.log(result); // Output: Infinity
+
 // number
 console.log(typeof 5);
 console.log(typeof 5.23);
@@ -27,3 +30,18 @@ console.log(Array.isArray(arr));
 if (!null) {
   console.log("chandan");
 }
+// if undefined -> true
+// so !undefined -> false
+if (!undefined) {
+  console.log("chandan chandan");
+}
+
+let str = ""; //false
+if (str) {
+  console.log("str is empty");
+}
+
+function abc() {
+  console.log("hello");
+}
+console.log(typeof abc);

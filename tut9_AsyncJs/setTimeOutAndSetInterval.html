@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>setTimeout and setInterval</h1>
+    <h1>timer : <span id="time">0</span> Sec</h1>
+    <h1>timer repeat : <span id="reptime">0</span> Sec</h1>
+
+    <script>
+      let time = document.getElementById("time");
+      let reptime = document.getElementById("reptime");
+      let timeId = setTimeout(() => {
+        console.log("setTimeout message");
+      }, 1000);
+      clearTimeout(timeId);
+
+      let sec = -1;
+
+      let intervalId = setInterval(() => {
+        sec++;
+        time.innerHTML = sec;
+        console.log("setInterval message");
+        if (sec == 60) {
+          myfun();
+        }
+      }, 1000);
+      function myfun() {
+        clearInterval(intervalId);
+      }
+
+      // Display a reapate timer;
+      function displaytimeAgain() {
+        let tisec = 0;
+        let timer = setInterval(function () {
+          reptime.innerHTML = tisec;
+          tisec++;
+          if (tisec >= 60) {
+            clearInterval(timer);
+            displaytimeAgain();
+          }
+        }, 1000);
+      }
+
+      displaytimeAgain();
+    </script>
+  </body>
+</html>

@@ -24,5 +24,6 @@ let char = 'b';
 let nextChar = String.fromCharCode(char.charCodeAt(0) + 1);
 console.log(nextChar);
 
+// max int and min int 
 console.log(Number.MAX_SAFE_INTEGER); // Output: 9007199254740991
 console.log(Number.MIN_SAFE_INTEGER); // Output: -9007199254740991

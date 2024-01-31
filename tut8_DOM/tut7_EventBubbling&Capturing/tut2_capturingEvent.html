@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: aqua;
+      }
+      #box {
+        margin: 50px;
+        width: 70%;
+        height: 50vh;
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    body field
+    <div id="box">
+      div field
+      <button id="btn">button field</button>
+    </div>
+
+    <script>
+      const body = document.body;
+      const div = document.getElementById("box");
+      const btn = document.getElementById("btn");
+
+      body.addEventListener(
+        "click",
+        () => {
+          console.log("body clicked ....");
+        },
+        true
+      );
+      div.addEventListener(
+        "click",
+        () => {
+          console.log("div clicked ....");
+        },
+        true
+      );
+      btn.addEventListener(
+        "click",
+        () => {
+          console.log("button clicked ....");
+        },
+        true
+      );
+
+      //   by default add event listener is bubbling event
+      //   by default it is false mean bubbling
+      // but when we add true as third parameter it is capturing event
+    </script>
+  </body>
+</html>
